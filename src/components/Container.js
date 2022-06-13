@@ -6,15 +6,21 @@ const Container = (props) => {
           <div className="loader"></div>
         </div>
       )}
+      {!props.data && !props.loading && (
+        <div className="flex flex-col items-center">
+          <p className="text">Click any button </p>
+        </div>
+      )}
       {props.data && !props.loading && (
         <div className="flex flex-col items-center">
-            <img src={props.data.avatar} className="rounded-full h-40 w-40 object-cover"></img>
+          <img
+            src={props.data.avatar}
+            className="rounded-full h-40 w-40 object-cover"
+          ></img>
           <p className="text">
             Name = {props.data.first_name + " " + props.data.last_name}
           </p>
-          <p className="text">
-            Email = {props.data.email}
-          </p>
+          <p className="text">Email = {props.data.email}</p>
         </div>
       )}
     </div>
